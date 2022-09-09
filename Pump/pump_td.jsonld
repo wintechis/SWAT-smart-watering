@@ -1,0 +1,37 @@
+{
+    "@context": "https://www.w3.org/2019/wot/td/v1",
+    "id": "urn:dev:ops:32473-WoTPump-1234",
+    "title": "My Pump",
+    "securityDefinitions": {
+        "basic_sc": {"scheme": "basic", "in":"header"}
+    },
+    "security": ["basic_sc"],
+    "properties": {
+        "pumpState" : {
+            "type": "boolean",
+            "description": "The current pumping settings.",
+            "readOnly": false,
+			"writeOnly": false,
+            "forms": [{
+                "href": "http://192.168.1.15/properties/power",
+                "op": [
+                    "readproperty"
+                ],
+                "htv:methodName":"GET"
+            },
+            {
+                "href": "http://192.168.1.15/properties/power",
+                "op": [
+                    "writeproperty"
+                ],
+                "htv:methodName":"PUT"
+            }
+            ]
+        }
+    },
+    "actions": {
+    },
+    "events":{
+
+    }
+}
