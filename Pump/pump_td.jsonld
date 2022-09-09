@@ -27,6 +27,27 @@
                 "htv:methodName":"PUT"
             }
             ]
+        },
+        "pumpDirection" : {
+            "type": "boolean",
+            "description": "The current pumping direction.",
+            "readOnly": false,
+			"writeOnly": false,
+            "forms": [{
+                "href": "http://192.168.1.15/properties/direction",
+                "op": [
+                    "readproperty"
+                ],
+                "htv:methodName":"GET"
+            },
+            {
+                "href": "http://192.168.1.15/properties/direction",
+                "op": [
+                    "writeproperty"
+                ],
+                "htv:methodName":"PUT"
+            }
+            ]
         }
     },
     "actions": {
